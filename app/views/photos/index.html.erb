@@ -9,13 +9,11 @@
     <!-- Bootstrap core CSS -->
 <title>Cuisine Photo</title>
 <link rel="stylesheet" href="reset.css">
-<link rel="stylesheat" href="photos.css" />
 <link rel="stylesheat" href="photos.scss" />
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
       rel="stylesheet"
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
       crossorigin="anonymous">
-
 
   </head>
 
@@ -44,15 +42,19 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
+      <% if user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to current_user.nickname + "さん", "#", class: "user-nickname " %>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__btn %>
+        </li>
+        <% else %>
         <li class="nav-item">
           <%= link_to "新規登録", new_user_registration_path, class: :nav__btn %>
         </li>
         <li class="nav-item">
           <%= link_to "ログイン", new_user_session_path, class: :nav__btn %>
         </li>
-        <li class="nav-item">
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__btn %>
-        </li>
+      <% end %>
       </ul>
       <form class="d-flex " >
         <input class="form-control ms-4" type="search" placeholder="Search" aria-label="Search">
@@ -62,6 +64,22 @@
   </div>
 </nav>
 </header>
+
+<sub-header>
+<div class="cp_cssslider">
+	<div class="cp_slidewrapper">
+		<div class="cp_slide_item"><img src="/assets/big.jpeg"></div>
+		<div class="cp_slide_item"><img src="/assets/nikuu.jpeg"></div>
+		<div class="cp_slide_item"><img src="/assets/simple.jpeg"></div>
+		<div class="cp_slide_item"><img src="/assets/mori.jpeg"></div>
+		<div class="cp_slide_item"><img src="/assets/outi.jpeg"></div>
+    <div class="cp_slide_item"><img src="/assets/bara.webp"></div>
+		<div class="cp_slide_item"><img src="/assets/sakura.jpeg"></div>
+    <div class="cp_slide_item"><img src="/assets/sinnbashi.webp"></div>
+		<div class="cp_slide_item"><img src="/assets/magazi.jpeg"></div>
+	</div>
+</div>
+<sub-header>
 
 <main>
 <div class="picture vh-100 d-frex align-items-center">
@@ -80,44 +98,17 @@
 </main>
 
 <sub-main>
-<div class='item-contents'>
-    <h1 class='title'>NEW PHOTO</h1>
-    <ul class='item-lists'>
-
-      <!--<% .each do |item| %>-->
-      <li class='list'>
-        <%= link_to '#' do %>
-        <div class='item-img-content'>
-          <%= image_tag item.image, class: "item-img" %>
-
-        </div>
-        <div class='item-info'>
-          <h3 class='item-name'>
-            <%= item.title %>
-          </h3>
-          <div class='item-price'>
-            <span><%= item.price %>円<br><%= item.shipping_cost.name %></span>
-            <div class='star-btn'>
-              <%= image_tag "star.png", class:"star-icon" %>
-              <span class='star-count'>0</span>
-            </div>
-          </div>
-        </div>
-        <% end %>
-      </li>
-      <% end %>
-      <li class='list'>
-        <%= link_to '#' do %>
-        <!--<%= image_tag "https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg", class: "item-img" %>-->
-        <div class='item-info'>
-          <h3 class='item-name'>
-            商品を出品してね！
-          </h3>
-        </div>
-        <% end %>
-      </li>
-    </ul>
+<div class='photo-contents'>
+  <h1 class='title'>Photo publiée</h1>
+  <ul class='photo-lists'>
+  <div class="card" style="width: 18rem;">
+    <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      </div>
   </div>
+  </ul>
+</div>
 
 </sub-main>
 </body>

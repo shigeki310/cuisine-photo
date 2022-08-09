@@ -44,6 +44,7 @@ Things you may want to cover:
 |title               |string     |null: false                    |
 |description         |text       |null: false                    |
 |user                |references |null: false, foreign_key: true |
+|image               |text       |null: false                    |
 
 ### Association
 
