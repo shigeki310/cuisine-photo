@@ -14,7 +14,6 @@
       rel="stylesheet"
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
       crossorigin="anonymous">
-
   </head>
 
 <body>
@@ -82,14 +81,16 @@
 <sub-header>
 
 <main>
-<div class="picture vh-100 d-frex align-items-center">
+<div class="picture  d-frex align-items-center">
   <div class="py-5 text-center container">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
         <h1 class="title fw-light">あなたのおすすめしたい料理を</h1>
         <p class="lead text-dark">行きつけのお店、オススメしたいお店、自分で作った料理、思い出の料理など共有したりトークしたい方はどんどん投稿していきましょう</p>
         <p>
-          <a href="#" class="btn btn-primary my-2">新規投稿</a>
+          <%= link_to(new_photo_path) do %>
+          <span class="btn btn-primary my-2">新規投稿</span>
+          <% end %>
         </p>
       </div>
     </div>
@@ -98,20 +99,52 @@
 </main>
 
 <sub-main>
-<div class='photo-contents'>
-  <h1 class='title'>Photo publiée</h1>
-  <ul class='photo-lists'>
-  <div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+<h1 class='sub-main-title'>Photo publiée</h1>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <% @photo.each do |photo| %>
+    <div class='col'>  
+      <div class="card">
+        <div class="card__wrapper" style="width: 35rem;">
+          <%= image_tag photo.image, class: "photo-img"%>
+          <div class="card__body">
+            <div class="photo-title">
+            <h3><%= photo.title  %></h3>
+            </div>
+            <div class="photo-description">
+            <p><%= photo.description %></p>
+            </div>
+            <div class="photo-user-nickname">
+            <%= photo.user.nickname + "さん" %>
+            <i class="bi bi-hand-thumbs-up"></i>
+            </div>
+          </div>
+        </div>
       </div>
-  </div>
-  </ul>
+    </div>
+  <% end %>
 </div>
+
+<nav aria-label="...">
+  <ul class="pagination justify-content-center m-5">
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="前">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="次">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
 
 </sub-main>
 </body>
+
 <footer class="text-muted py-5">
   <div class="container">
     <p class="float-end mb-1">
