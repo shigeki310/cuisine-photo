@@ -1,0 +1,45 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light py-4">
+    <h1 class="title mx-auto">Cuisine de Photo</h1>
+</header>
+
+<div class="toukou vh-100 d-frex align-items-center">
+<div class="py-5 container">
+    <h2 class="photos-title">写真の情報</h2>
+    <%= form_with model: @photo, url: photos_path, local: true, method: :post do |f| %>
+
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        写真
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+      <%= f.file_field :image, id:"photo-image" %>
+      </div>
+    </div>
+
+    <div class="new-photos">
+      <div class="weight-bold-text">
+        タイトル
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :title, class:"photos-text", id:"photo-name", placeholder:"写真のタイトル", maxlength:"40" %>
+      <div class="photos-explain">
+        <div class="weight-bold-text">
+          写真の説明
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :description, class:"photos-text", id:"photo-info", placeholder:"写真の説明（必須 1,000文字まで）どこで食事したか、特に美味しかった点など印象になったところがあれば記入しましょう。" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+      <div class="photo-btn-contents">
+        <p><%= f.submit "投稿する",class:"photo-btn" %></p>
+        <p><%=link_to 'もどる', root_path, class:"back-btn" %></p>
+      </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+</div>
