@@ -3,7 +3,7 @@
     <h1 class="title mx-auto">Cuisine de Photo</h1>
 </header>
 
-  <%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
+<%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
 <div class='form-wrap'>
 <div class='form-image'>
   <div class='form-header'>
@@ -15,21 +15,21 @@
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text text-dark">ニックネーム</label>
-      <span class="indispensable p-2 mb-2 bg-danger text-white">必須</span>
+      <span class="indispensable p-2 mb-2 bg-danger text-dark">必須</span>
     </div>
     <%= f.text_area :nickname, class:"input-default", id:"nickname", placeholder:"例) ニックネーム", maxlength:"40" %>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text text-dark">メールアドレス</label>
-      <span class="indispensable p-2 mb-2 bg-danger text-white">必須</span>
+      <span class="indispensable p-2 mb-2 bg-danger text-dark">必須</span>
     </div>
     <%= f.email_field :email, class:"input-default", id:"email", placeholder:"PC・携帯どちらでも可", autofocus: true %>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text text-dark">パスワード</label>
-      <span class="indispensable p-2 mb-2 bg-danger text-white">必須</span>
+      <span class="indispensable p-2 mb-2 bg-danger text-dark">必須</span>
     </div>
     <%= f.password_field :password, class:"input-default", id:"password", placeholder:"6文字以上の半角英数字" %>
     <p class='info-text'>※英字と数字の両方を含めて設定してください</p>
@@ -37,7 +37,7 @@
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text text-dark">パスワード(確認)</label>
-      <span class="indispensable p-2 mb-2 bg-danger text-white">必須</span>
+      <span class="indispensable p-2 mb-2 bg-danger text-dark">必須</span>
     </div>
     <%= f.password_field :password_confirmation, class:"input-default", id:"password-confirmation", placeholder:"同じパスワードを入力して下さい" %>
   </div>
@@ -48,8 +48,8 @@
       <br>に同意したものとみなします
     </h2>
   </div>
-  <div class='register-btn'>
-    <%= f.submit "会員登録" ,class:"register-right-btn" %>
+  <div class="d-grid gap-2 col-3 mx-auto">
+  <%= f.submit "会員登録" ,class:"btn btn-outline-primary fs-4 fw-bold" %>
   </div>
   <p class='register-info'>本人情報の登録について</p>
 </div>

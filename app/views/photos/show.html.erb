@@ -1,0 +1,33 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light py-4">
+    <h1 class="title mx-auto">Cuisine de Photo</h1>
+</header>
+
+<show-main>
+<div class="photo-show">
+  <div class="photo-box">
+    <h2 class="name">
+      <%= @photo.title %>
+    </h2>
+    <div class="photo-img-content">
+      <%= image_tag @photo.image, class:"photo-box-img"%>
+    </div>
+  </div>
+
+
+  <% if user_signed_in? && current_user.id == @photo.user_id%>
+  <div class="button justify-content-around">
+    <%= link_to '編集', edit_photo_path, method: :get, type:"button", class: "btn btn-primary btn-lg "%>
+    <%= link_to '削除', photo_path, method: :delete, type:"button", class:"btn btn-secondary btn-lg" %>
+  </div>
+  <% end %>
+</div>
+
+
+<div class="photo-explain-box">
+  <span><%= @photo.description %></span>
+</div>
+
+
+</show-main>
+

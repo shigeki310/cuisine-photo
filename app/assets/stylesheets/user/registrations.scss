@@ -7,13 +7,13 @@
 }
 
 .form-wrap {
-  width: 50%;
+  width: 100%;
   background-color: white;
   padding-bottom: 70px;
 }
 
 .form-image {
-  background-image: image-url('big.jpeg');
+  background-image: image-url('oreno.jpeg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
@@ -34,10 +34,11 @@
   line-height: 100px;
   border-bottom: 1px solid #f5f5f5;
   font-weight: bold;
+  text-align: center;
 }
 
 .form-group {
-  width: 50%;
+  width: 60ch;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -55,6 +56,7 @@
 
 .form-text {
   font-size: 22px;
+  text-align: center;
   font-weight: bold;
 }
 
@@ -64,7 +66,7 @@
   height: 48px;
   padding: 10px 16px 8px;
   border-radius: 4px;
-  border: 1px solid #ccc;
+  border: 3px solid #000;
   background: #fff;
   font-size: 16px;
   resize: none;
@@ -83,27 +85,32 @@
 
 .form-bottom-text>span {
   color: #000;
+  font-weight: 800;
   cursor: pointer;
 }
 
 .register-btn {
   width: 50%;
   margin: 0 auto;
+  text-align: center;
+  border-radius: 8px;
 }
 
 .register-right-btn {
-  width: 100%;
-  background: #abd88a;
+  width: 50%;
+  background: #aaafec;
   border: 1px solid #abd88a;
   color: #000;
   line-height: 48px;
-  font-size: 14px;
+  font-size: 18px;
+  font-weight: 800;
   cursor: pointer;
 }
 
 .register-info {
-  margin: 30px 180px 0 0;
+  margin: 30px 0 0 0;
   color: #000;
-  text-align: right;
+  text-align: center;
+  font-weight: 800;
   cursor: pointer;
 }

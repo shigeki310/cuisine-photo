@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 .navbar .nav-link  {
   color: #000 !important;
   font-size: 17px;
@@ -20,7 +21,7 @@
 .user-nickname {
   text-decoration: none;
   color: #000;
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 500;
   margin-right: 10px;
 }
@@ -138,7 +139,7 @@
 .photo-user-nickname {
   font-size: 20px;
   font-weight: 800;
-  text-align: right;
+  text-align: end;
   padding-right: 35px;
   padding-bottom: 20px;
 }
