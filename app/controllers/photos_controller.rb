@@ -4,10 +4,10 @@ class PhotosController < ApplicationController
   before_action :move_to_index, only: [:edit, :update, :destroy]
 
   def index
-    @photo = Photo.all.order(created_at: :desc)
-    @q = Photo.all.ransack(params[:id])
-     # ページネーションをつけたいデータに.page(params[:page])を追加
-    @photos = @q.result(distinct: true).page(params[:page]).per(3)
+    # @photo = Photo.all.order(created_at: :desc)
+    @q = Photo.all.ransack(params[:q])
+    # ページネーションをつけたいデータに.page(params[:page])を追加
+    @photos = @q.result(distinct: true).page(params[:page]).per(6)
   end
 
   def new 
